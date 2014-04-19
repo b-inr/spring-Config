@@ -1,5 +1,7 @@
-git 최초 커밋 
+git 사용법
+git add {file}
+git commit -m '주석'
+git status
+git remote -v
+git push origin master
 
-sublime Text 2 적용 
-
-sublime test 3
