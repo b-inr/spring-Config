@@ -1,3 +1,10 @@
+git 사용법
+git add {file}
+git commit -m '주석'
+git status
+git remote -v
+git push origin master
+
 jdk-6u34-windows-x64 (설치 버전)
 
 
