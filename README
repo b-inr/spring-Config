@@ -6,5 +6,11 @@ git remote -v
 git push origin master
 
 jdk-6u34-windows-x64 (설치 버전)
+eclipse-jee-kepler-SR2-win32-x86_64
 
+#프로젝트 생성 
+Dynamic web project 생성
+configure > convert maven
 
+eclispe.ini
+-Dfile.encoding=utf-8 <-- 이부분 추가
