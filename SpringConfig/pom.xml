@@ -61,7 +61,9 @@
       <artifactId>spring-security-taglibs</artifactId>
       <version>${org.springframework-version}</version>
     </dependency>
-                 
+    
+    
+    <!--  왜 사용되는지 확인이 필요한 것들 -->             
     <!-- spring - ibatis -->
     <dependency>
       <groupId>org.springframework</groupId>

@@ -8,5 +8,6 @@
 </head>
 <body>
 aaaa bbbb
+{title}
 </body>
 </html>
