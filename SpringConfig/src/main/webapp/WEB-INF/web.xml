@@ -5,35 +5,53 @@
     version="2.5">
 		
 	<display-name>SpringConfig</display-name>
+ 
+  <context-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>
+              classpath*:config/spring/context-*.xml 
+              /WEB-INF/config/common-*.xml                
+      </param-value>
+  </context-param>
 
-    
-    <context-param>
-        <param-name>contextConfigLocation</param-name>
-        <param-value>
-                <!-- //classpath*:dmconfig/spring/com/context-*.xml -->
-                /WEB-INF/config/common-*.xml                
-        </param-value>
-    </context-param>
+  <listener>
+      <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+
+  <servlet>
+      <servlet-name>action</servlet-name>
+      <servlet-class>
+          org.springframework.web.servlet.DispatcherServlet
+      </servlet-class>
+      <init-param>
+          <param-name>contextConfigLocation</param-name>
+          <param-value/>
+      </init-param>
+      <load-on-startup>1</load-on-startup>
+  </servlet>
   
-    <listener>
-        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-    </listener>
-
-    <servlet>
-        <servlet-name>action</servlet-name>
-        <servlet-class>
-            org.springframework.web.servlet.DispatcherServlet
-        </servlet-class>
-        <init-param>
-            <param-name>contextConfigLocation</param-name>
-            <param-value/>
-        </init-param>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-    
-    <servlet-mapping>
-        <servlet-name>action</servlet-name>
-        <url-pattern>*.do</url-pattern>
-    </servlet-mapping>
-    
+  <servlet-mapping>
+      <servlet-name>action</servlet-name>
+      <url-pattern>*.do</url-pattern>
+      <url-pattern>*.hd</url-pattern>
+  </servlet-mapping>
+  
+  
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <jsp-config>
+		<jsp-property-group>
+			<url-pattern>*.jsp</url-pattern>
+			<el-ignored>false</el-ignored>
+			<page-encoding>UTF-8</page-encoding>
+			<scripting-invalid>false</scripting-invalid>
+			<include-prelude>/WEB-INF/jsp/include/globalHeader.jsp</include-prelude>
+			<trim-directive-whitespaces>true</trim-directive-whitespaces>
+			<!-- <include-coda>/template/coda.jspf</include-coda> -->
+		</jsp-property-group>
+	</jsp-config>
+	
+	
 </web-app>
